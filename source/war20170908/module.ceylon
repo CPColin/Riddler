@@ -22,7 +22,7 @@
  * Convert deck to string
  * Generate random deck
  * Compare two decks, with tie-break strategy
- * Validate deck against house deck
+ * Validate deck against house decks
  * Generate population of N valid decks
  * Score each deck in population against rest of population O(n²)
  * Generate new population by keeping X best decks and filling in with new, random decks
@@ -32,4 +32,6 @@
  * Tweak deck by swapping some of its elements
  * Generate new population by keeping X best decks, Y tweaked decks, and filling in rest
  "
-module war20170908 "1.0.0" {}
+module war20170908 "1.0.0" {
+    import ceylon.random "1.3.3";
+}
