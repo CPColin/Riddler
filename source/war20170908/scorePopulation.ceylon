@@ -5,6 +5,6 @@ shared ScoredPopulation scorePopulation(Population population)
                 attacker ->
                         sum { 0, *{
                         for (defender in population)
-                            battle(attacker, defender, false)
+                            battle(attacker, defender, false).sign
                     } }
         ];
