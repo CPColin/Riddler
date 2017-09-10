@@ -1,5 +1,6 @@
 import ceylon.test {
     assertEquals,
+    assertTrue,
     test
 }
 
@@ -10,7 +11,21 @@ import war20170908 {
 
 test
 shared void populateDecksTest() {
-    value population = populateDecks();
+    // The parameters annotation got confused by all the tuples.
+    value parameters = {
+        [],
+        [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]],
+        [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]],
+        [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
+    };
     
-    assertEquals(population.size, populationSize);
+    for (seed in parameters) {
+        value population = populateDecks(seed);
+        
+        assertEquals(population.size, populationSize);
+        assertTrue(population.containsEvery(seed));
+    }
 }
