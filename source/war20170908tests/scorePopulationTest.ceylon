@@ -17,13 +17,13 @@ import war20170908 {
             [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
             [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4]
         ], [
-            [[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], -7],
-            [[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4], 7]
+            [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] -> -7,
+            [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4] -> 7
         ]]
 };
 
 test
 parameters (`value scorePopulationTestParameters`)
-shared void scorePopulationTest(Population population, [Deck, Integer][] expected) {
+shared void scorePopulationTest(Population population, ScoredPopulation expected) {
     assertEquals(scorePopulation(population), expected);
 }
