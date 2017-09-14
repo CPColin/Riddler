@@ -5,7 +5,6 @@ import ceylon.test {
 }
 
 import war20170908 {
-    Deck,
     Population,
     ScoredPopulation,
     scorePopulation
